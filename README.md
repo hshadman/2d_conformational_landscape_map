@@ -1,6 +1,5 @@
 # This file contains the code 
 
-A protein/polymer's Rg2 and Ree2 values can be input here and the function will provide the fC value and the 2d conformational landscape map.
+here i am creating a package that will be made available with my next publication. The package is inside the jupyter notebook, named display_2d_map. 
 
-There are two functions written in python code. There is also the code for the GW reference polymer chain, consisting of 100 monomers.
-
+This package takes in Rg2 and Ree2 data for a protein or polymer chain, and can plot the conformational ensemble as a map for that polymer/protein. The 2d conformational map shows a scatter plot in terms of polymer shape and size. 
