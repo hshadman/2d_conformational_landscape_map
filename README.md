@@ -6,7 +6,7 @@
 
 ### HOW TO CITE: If you use this module, please cite us using the doi: 
 
-An _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ value constitute an entity's instantaneous conformation. All _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ values, when plotted together, constitute a map of the conformational landscape of the entity. 
+An (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_, _R<sub>s</sub>_) value constitute an entity's instantaneous conformation. All (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_, _R<sub>s</sub>_) values, when plotted together, constitute a map of the conformational landscape of the entity. 
 
 The module generates scatter plots of the conformational landscape of a protein/polymer (data provided by user) against that of a Gausssian Walk (GW) polymer chain model (data for 720000 snapshots of a GW model of length 100 included with repository). The included GW file is GW_chainlen100.csv. The python module can be additionally used to generate a new GW file with different features, should the user wish to do so.
 
