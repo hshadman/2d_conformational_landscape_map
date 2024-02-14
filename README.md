@@ -16,3 +16,4 @@ The input needed from the user for the module is a csv file with 2 columns, the 
 
 The 'code_input_output.md' file provides technical details (input arguments, expected outputs) of the module. The 'pyconformap.py' file contains the code for the module.  The 'illustrated_example.ipynb' jupyter notebook file shows examples to illustrate implementation of the code. 
 
+_PyConforMap_ is a companion to a paper that is currently under peer-review for publication. 
