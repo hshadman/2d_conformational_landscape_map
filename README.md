@@ -4,7 +4,7 @@
 
 ## This repository provides an easy-to-implement python module called _PyConforMap_ that generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_).
 
-### This is release 1.0.0. This is the initial release. 
+### This is release 1.0.0. This is the initial release. If you have comments/suggestions, please feel free to email me at hs4md@virginia.edu.
 
 ### HOW TO CITE: If you use this module, please cite us using the doi: 
 
