@@ -1,0 +1,1 @@
+# Technical Details for the _PyConforMap_ python module
