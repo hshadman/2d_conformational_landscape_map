@@ -4,8 +4,7 @@
 
 ### This is release 1.0.0. This is the initial release. 
 
-### HOW TO CITE: 
-### If you use this module, please cite us using the doi: 
+### HOW TO CITE: If you use this module, please cite us using the doi: 
 
 An _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ value constitute an entity's instantaneous conformation. All _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ values, when plotted together, constitute a map of the conformational landscape of the entity. 
 
