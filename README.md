@@ -14,5 +14,5 @@ This module generates (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_, _R<sub>s</s
 
 The input needed from the user for the module is a csv file with 2 columns, the first column being _R<sub>g</sub><sup>2</sup>_ values with the second column containing the corresponding _R<sub>ee</sub><sup>2</sup>_ values. An example input it the 'example_protein.csv' csv file (included with repository).  
 
-The 'documentation.md' file provides all technical details of the module. The '2d_conformation_map.ipynb' jupyter notebook file contains the python module code along with examples to illustrate implementation of the code. 
+The 'documentation.md' file provides all technical details of the module. The 'illlustrated_example.ipynb' jupyter notebook file contains the python module code along with examples to illustrate implementation of the code. 
 
