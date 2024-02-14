@@ -1,4 +1,4 @@
-class display_2d_map():
+class PyConforMap():
     
     def __init__(self, csv_file,radius_= 0.1,max_x_val=3,max_y_val=30,min_x_val=0,min_y_val=0):
         
