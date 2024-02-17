@@ -4,13 +4,15 @@
 
 PyConforMap is a python class. 
 
-This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for a protein or polymer against those of Gaussian Walk (GW) polymer model reference. _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
+This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_), for a given protein/polymer on top of those of a Gaussian Walk (GW). _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
     
 It can be used to examine the scatter plot and analyze metrics. 
 
 Once the dataset is loaded, it prints the % of protein/polymer points that are close to reference (GW) points.
 
-Parameters:<br> 
+By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory.
+
+Input Parameters:<br> 
 
 **csv_file** : **_a csv file of shape (n,2)_**<br>
 &ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot.  
@@ -24,4 +26,19 @@ Parameters:<br>
 &ensp;&ensp;minimum x-axis limit for scatter plot. Default 0.  
 **min_y_val** : **_float, optional_**<br>
 &ensp;&ensp;minimum y-axis limit to use for scatter plot. Default 0.  
+
+Methods:
+
+**PyConforMap.plot_protein_against_GW** (**protein_label**,**provided_color**= 'magenta')
+
+This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for a protein/polymer GW. GW points are shown in black by default.
+
+Input Parameters:<br> 
+
+**protein_label** : **_string_**<br>
+&ensp;&ensp;A string to identify the protein points on the scatter plot.  
+**provided_color** : **_string, optional_**<br>
+&ensp;&ensp;The color of the provided protein/polymer points. Default magenta.
+
+
 
