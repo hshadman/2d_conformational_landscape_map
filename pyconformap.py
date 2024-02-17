@@ -259,7 +259,7 @@ class PyConforMap():
             
         bounded_fraction=(self.protein_points.shape[0]-len(protein_not_in_range))/(self.protein_points.shape[0])
         self.bounded_fraction = bounded_fraction
-        return print(f'{format(bounded_fraction*100,"0.2f")}% of protein/polymer snapshots are close to GW snapshots')
+        return print(f'{format(bounded_fraction*100,"0.2f")}% of protein/polymer snapshots are close to at least 1 GW snapshot')
     
     def change_xlim_ylim(self,max_x_val,max_y_val):
         #the default xlim max is 3 and default xlim min is 0
