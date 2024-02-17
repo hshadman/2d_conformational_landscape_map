@@ -4,7 +4,7 @@
 
 PyConforMap is a python class. 
 
-This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_), for a given protein/polymer on top of those of a Gaussian Walk (GW). _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
+This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_), for a given protein/polymer simulation on top of those of a Gaussian Walk (GW) simulation. _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
     
 It can be used to examine the scatter plot and analyze metrics. 
 
@@ -166,3 +166,17 @@ Saves the current GW reference chain simulation to a csv file. The filename is _
 Revert to the default GW reference simulation. Re-loads the _GW_chainlen100.csv_ csv file to use as reference. 
 
 </details>
+
+## Attributes:<br> 
+
+**protein_rg2** : **_array_**<br>
+&ensp;&ensp;A numpy array of the square of the protein/polymer radius of gyration values.
+
+**protein_ree2** : **_array_**<br>
+&ensp;&ensp;A numpy array of the square of the protein/polymer end-to-end distance values.
+
+**protein_rg_mean** : **_float_**<br>
+&ensp;&ensp;The mean of the protein/polymer radius of gyration, computed from all data combined.
+
+**GW_df** : **_pandas dataframe_**<br>
+&ensp;&ensp;A dataframe of the GW reference simulation, which by default is the provided _GW_chainlen100.csv_ file.
