@@ -1,12 +1,37 @@
 class PyConforMap():
+    """
+     A class used to represent a 2D map of the conformational landscape of a protein or polymer chain
+
+    ...
+
+    Attributes
+    ----------
+    protein_rg2 : array
+        the square of the radius of gyration values of protein/polymer
+    protein_ree2 : array
+        the square of the end-to-end distance values of protein/polymer
+    protein_rg : array
+        the radius of gyration values (square root of the protein_rg2 attribute) 
+    protein_rg_mean : float
+        The mean value of radius of gyration data, inteded to be used wherever in the class this mean is needed.
+    GW_df : pandas dataframe
+        A pandas dataframe containing the GW data. By default, it loads the provided csv file GW_chainlen100.csv
+    radius_ : float
+        The radius value (default 0.1) of the protein/polymer dots in the transformed 2D space, for fC calculation
+        
+    Methods
+    -------
+    says(sound=None)
+        Prints the animals name and what sound it makes
+    """
     
     def __init__(self, csv_file,radius_= 0.1,max_x_val=3,max_y_val=30,min_x_val=0,min_y_val=0):
-        
+
         #load csv file, where first column is supposed to be Rg2 values and second column is Ree2 values
         #initialize the rg2 and ree2 variables
         df_conf = pd.read_csv(csv_file)
-        self.protein_rg2 = df_conf.iloc[:,0]
-        self.protein_ree2 = df_conf.iloc[:,1]
+        self.protein_rg2 = df_conf.iloc[:,0].values
+        self.protein_ree2 = df_conf.iloc[:,1].values
         
         #calculate and store an rg_mean value from complete dataset
         self.protein_rg = self.protein_rg2**0.5
@@ -17,9 +42,9 @@ class PyConforMap():
         #the 'Rg2' is radius-of-gyration^2 and 'Rend2' is end-to-end-distance^2
         #the instantaneous shape ratio is calculated here
         #the file containing GW reference chain data should also have Rg/Rg_mean data
-        #the self.testeq_GW MUST be single chain length data
-        self.testeq_GW = pd.read_csv('GW_chainlen100.csv')
-        self.testeq_GW['ratio'] = self.testeq_GW['Rend2'].values/self.testeq_GW['Rg2'].values
+        #the self.GW_df MUST be single chain length data
+        self.GW_df = pd.read_csv('GW_chainlen100.csv')
+        self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
         
         #the default radius is 0.1
         self.radius_ = radius_
@@ -35,10 +60,13 @@ class PyConforMap():
         self.upto_protein_snapshots = len(self.protein_ree2)
         
         #by default using all GW snapshots provided in the datafile
-        self.GW_every_ith_snap = self.testeq_GW.shape[0]
+        self.GW_every_ith_snap = self.GW_df.shape[0]
         
         #initialize the protein dataframe and both GW and protein coordinates
         self.organize_data(self.protein_rg2,self.protein_ree2,self.upto_protein_snapshots,self.GW_every_ith_snap)
+        
+        #for the loaded data, print out what % is close to GW points
+        self.check_boundary()
         
     def plot_protein_against_GW(self,protein_label,provided_color='magenta'):
 
@@ -56,8 +84,8 @@ class PyConforMap():
         #save x_total and y_total and x_polmodel_GW and y_polmodel_GW as simple lists
         x_total = self.poly_var['Rg/Rg_mean'].values.tolist()
         y_total = self.poly_var['ratio'].values.tolist()
-        x_polmodel_GW = self.testeq_GW['Rg/Rg_mean'].values.tolist()
-        y_polmodel_GW = self.testeq_GW['ratio'].values.tolist()
+        x_polmodel_GW = self.GW_df['Rg/Rg_mean'].values.tolist()
+        y_polmodel_GW = self.GW_df['ratio'].values.tolist()
 
         #calculate fC value using fC method provided in class
         self.fC_value = self.fC_using_cdist(self.upto_protein_snapshots,
@@ -71,11 +99,11 @@ class PyConforMap():
         #the default minimum axis limits for both x- and y-axis are 0
         xlims = [self.min_x_val,self.max_x_val]
         ylims = [self.min_y_val,self.max_y_val]
-        if self.testeq_GW['Rg/Rg_mean'].max()>self.max_x_val:
-            self.max_x_val = self.testeq_GW['Rg/Rg_mean'].max()
+        if self.GW_df['Rg/Rg_mean'].max()>self.max_x_val:
+            self.max_x_val = self.GW_df['Rg/Rg_mean'].max()
             print('x-axis maximum limit updated from default value')
-        elif self.testeq_GW['Rg/Rg_mean'].min()<self.min_x_val:
-            self.min_x_val = self.testeq_GW['Rg/Rg_mean'].min()
+        elif self.GW_df['Rg/Rg_mean'].min()<self.min_x_val:
+            self.min_x_val = self.GW_df['Rg/Rg_mean'].min()
             print('x-axis minimum limit updated from default value')            
         elif max(x_total)>self.max_x_val:
             self.max_x_val = max(x_total)
@@ -83,11 +111,11 @@ class PyConforMap():
         elif min(x_total)<self.min_x_val:
             self.min_x_val = min(x_total)
             print('x-axis minimum limit updated from default value')            
-        elif self.testeq_GW['ratio'].max()>self.max_y_val:
-            self.max_y_val = self.testeq_GW['ratio'].max()
+        elif self.GW_df['ratio'].max()>self.max_y_val:
+            self.max_y_val = self.GW_df['ratio'].max()
             print('y-axis maximum limit updated from default value')                        
-        elif self.testeq_GW['ratio'].min()<self.min_y_val:   
-            self.min_y_val = self.testeq_GW['ratio'].min()            
+        elif self.GW_df['ratio'].min()<self.min_y_val:   
+            self.min_y_val = self.GW_df['ratio'].min()            
             print('y-axis minimum limit updated from default value')                        
         elif max(y_total)>self.max_y_val:
             self.max_y_val = max(y_total)
@@ -253,7 +281,7 @@ class PyConforMap():
         
         ref_snaps=[]
         fC_vary_ref=[]
-        for GW_ref_snapshots in range(every_yth_snap,self.testeq_GW.shape[0]+every_yth_snap,
+        for GW_ref_snapshots in range(every_yth_snap,self.GW_df.shape[0]+every_yth_snap,
                                     every_yth_snap):
             ref_snaps.append(GW_ref_snapshots)
             fC_vary_ref.append(self.fC_using_cdist(self.upto_protein_snapshots,
@@ -301,8 +329,8 @@ class PyConforMap():
         rg_mean = np.mean(rg_val)
         master_out['Rg/Rg_mean'] = rg_val/rg_mean
         del rg_val, rg_mean
-        self.testeq_GW = master_out.copy()
-        self.testeq_GW['ratio'] = self.testeq_GW['Rend2'].values/self.testeq_GW['Rg2'].values
+        self.GW_df = master_out.copy()
+        self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
         print(f'New GW reference chain of length {chain_length} has been initialized for this instance')
         return master_out
     def Ree2(self,x,y,z):
@@ -319,10 +347,10 @@ class PyConforMap():
     def save_GW_chain_to_csv(self):
         #GW datafile must contain only one chain length
         #will be saved to current directory
-        self.testeq_GW.to_csv("GW_chainlen{self.testeq_GW.chain_length.unique()[0]}.csv",index=False)
+        self.GW_df.to_csv("GW_chainlen{self.GW_df.chain_length.unique()[0]}.csv",index=False)
     def retrieve_default_GW_chain(self):
-        self.testeq_GW = pd.read_csv('GW_chainlen100.csv')
-        self.testeq_GW['ratio'] = self.testeq_GW['Rend2'].values/self.testeq_GW['Rg2'].values
+        self.GW_df = pd.read_csv('GW_chainlen100.csv')
+        self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
     def plot_style(self,ax,xlabel,ylabel,fontsize = 19, labelsize = 22, rotation = 0):
         plt.setp(ax.get_xticklabels(),fontsize=fontsize,rotation=rotation)
         plt.setp(ax.get_yticklabels(),fontsize=fontsize)
@@ -355,16 +383,16 @@ class PyConforMap():
         protein_pro['polymer_id']=np.repeat(protein_label,protein_pro.shape[0])
 
         #the GW_po variable is for GW
-        GW_po=self.testeq_GW[['Rg/Rg_mean','ratio']].iloc[:GW_every_ith_snap,:].copy()
+        GW_po=self.GW_df[['Rg/Rg_mean','ratio']].iloc[:GW_every_ith_snap,:].copy()
         GW_po['polymer_id']=np.repeat('GW',GW_po.shape[0])
 
         #calculate mean and stdev values (must keep same mean and stdev values)
         #calculating mean and stdev values of Rg/Rg_mean and shape ratio for GW
         upto_snapshots=720000
-        GW_mean_Rg_Rg_mean=np.mean(self.testeq_GW['Rg/Rg_mean'].values[0:(upto_snapshots+1)])
-        GW_std_Rg_Rg_mean=np.std(self.testeq_GW['Rg/Rg_mean'].values[0:(upto_snapshots+1)])
-        GW_mean_ratio=np.mean(self.testeq_GW['ratio'].values[0:(upto_snapshots+1)])
-        GW_std_ratio=np.std(self.testeq_GW['ratio'].values[0:(upto_snapshots+1)])
+        GW_mean_Rg_Rg_mean=np.mean(self.GW_df['Rg/Rg_mean'].values[0:(upto_snapshots+1)])
+        GW_std_Rg_Rg_mean=np.std(self.GW_df['Rg/Rg_mean'].values[0:(upto_snapshots+1)])
+        GW_mean_ratio=np.mean(self.GW_df['ratio'].values[0:(upto_snapshots+1)])
+        GW_std_ratio=np.std(self.GW_df['ratio'].values[0:(upto_snapshots+1)])
 
         #create a pandas dataframe with combined GW and protein Rg/Rg_mean and instantaneous shape ratio 
         combined_pro_po=pd.concat([GW_po,protein_pro],axis=0,ignore_index=True)
