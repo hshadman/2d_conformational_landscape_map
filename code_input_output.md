@@ -12,12 +12,12 @@ Parameters:<br>
 **csv_file** : **_a csv file of shape (n,2)_**  
 &ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot.  
 **radius_** : **_float, optional_**
-	     - The radius to use to count GW snapshots that are close to protein/polymer snapshots, or vice versa. Default 0.1. NOTE: All scatter points coordinates are transformed before any such computation is performed.  
+&ensp;&ensp;The radius to use to count GW snapshots that are close to protein/polymer snapshots, or vice versa. Default 0.1. NOTE: All scatter points coordinates are transformed before any such computation is performed.  
 **max_x_val** : **_float, optional_** 
-	       - maximum x-axis limit for scatter plot. Default 3.  
+&ensp;&ensp;maximum x-axis limit for scatter plot. Default 3.  
 **max_y_val** : **_float, optional_**
-	       - maximum y-axis limit to use for scatter plot. Default 30.  
+&ensp;&ensp;maximum y-axis limit to use for scatter plot. Default 30.  
 **min_x_val** : **_float, optional_** 
-	       - minimum x-axis limit for scatter plot. Default 0.  
+&ensp;&ensp;minimum x-axis limit for scatter plot. Default 0.  
 **min_y_val** : **_float, optional_**
-	       - minimum y-axis limit to use for scatter plot. Default 0.  
+&ensp;&ensp;minimum y-axis limit to use for scatter plot. Default 0.  
