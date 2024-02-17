@@ -1,4 +1,4 @@
-<font size="10">**A HEADER** IS JUST TEXT **WITH BIGGER FONT SIZE**</font>
+<font size="20">**A HEADER** IS JUST TEXT **WITH BIGGER FONT SIZE**</font>
 # Technical Details for the _PyConforMap_ python module
 ### _class_ PyConforMap # **csv_file**, **radius_**= 0.1, **max_x_val**= 3, **max_y_val**= 30, **min_x_val**= 0, **min_y_val**= 0
 
