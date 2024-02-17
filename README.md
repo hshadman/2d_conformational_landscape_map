@@ -14,6 +14,6 @@ This module generates 2D scatter plots of _R<sub>s</sub>_ against _R<sub>g</sub>
 
 The input needed from the user for the module is a csv file with 2 columns, the first column being _R<sub>g</sub><sup>2</sup>_ values with the second column containing the corresponding _R<sub>ee</sub><sup>2</sup>_ values. An example input is the 'example_protein.csv' csv file (included with repository).  
 
-The 'code_input_output.md' file provides technical details (input arguments, expected outputs) of the module. The 'pyconformap.py' file contains the code for the module.  The 'illustrated_example.ipynb' jupyter notebook file shows examples to illustrate implementation of the code. 
+The 'code_input_output.md' file provides technical details (input arguments, expected outputs) of the module. The 'pyconformap.py' file contains the source code for the module.  The 'illustrated_example.ipynb' jupyter notebook file shows examples to illustrate implementation of the code. 
 
 _PyConforMap_ is a companion to a paper that is currently under peer-review for publication. 
