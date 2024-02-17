@@ -98,6 +98,10 @@ Generates a plot of _f<sub>C</sub>_ against number of protein/polymer snapshots.
 
 </details>
 
+<details>
+
+<summary>vary_GW_ref - plot f<sub>C</sub> against GW snapshots</summary>
+
 **PyConforMap.`vary_GW_ref`** (**protein_lab**, **no_dots** = 40) 
 
 Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.  
