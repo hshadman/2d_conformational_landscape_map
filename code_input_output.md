@@ -8,7 +8,10 @@ This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_
     
 It can be used to examine the scatter plot and analyze metrics. 
 
+Once the dataset is loaded, it prints the % of protein/polymer points that are close to reference (GW) points.
+
 Parameters:<br> 
+
 **csv_file** : **_a csv file of shape (n,2)_**<br>
 &ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot.  
 **radius_** : **_float, optional_**<br> 
@@ -21,3 +24,4 @@ Parameters:<br>
 &ensp;&ensp;minimum x-axis limit for scatter plot. Default 0.  
 **min_y_val** : **_float, optional_**<br>
 &ensp;&ensp;minimum y-axis limit to use for scatter plot. Default 0.  
+
