@@ -32,7 +32,6 @@ Methods:
 <details>
 
 <summary>
-
 _plot_protein_against_GW_ - generates the scatter plot
 
 </summary>
