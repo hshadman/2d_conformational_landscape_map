@@ -179,4 +179,4 @@ Revert to the default GW reference simulation. Re-loads the _GW_chainlen100.csv_
 &ensp;&ensp;The mean of the protein/polymer radius of gyration, computed from all data combined.
 
 **GW_df** : **_pandas dataframe_**<br>
-&ensp;&ensp;A dataframe of the GW reference simulation, which by default is the provided _GW_chainlen100.csv_ file.
+&ensp;&ensp;A dataframe of the GW reference simulation, which by default is the provided _GW_chainlen100.csv_ file. The columns, in order, are GW chain length, square of radius of gyration, square of end-to-end distance, relative radius of gyration, and instantaneous shape ratio. Each row represents a conformation snapshot from the GW simulation.  
