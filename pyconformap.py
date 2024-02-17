@@ -97,32 +97,34 @@ class PyConforMap():
         #There is a separate method in the class if these default xlim and ylim values need to be changed
         #below it checks whether datapoints exceed the axis limits, provides an error if any limit is exceeded
         #the default minimum axis limits for both x- and y-axis are 0
-        xlims = [self.min_x_val,self.max_x_val]
-        ylims = [self.min_y_val,self.max_y_val]
         if self.GW_df['Rg/Rg_mean'].max()>self.max_x_val:
             self.max_x_val = self.GW_df['Rg/Rg_mean'].max()
             print('x-axis maximum limit updated from default value')
-        elif self.GW_df['Rg/Rg_mean'].min()<self.min_x_val:
+        if self.GW_df['Rg/Rg_mean'].min()<self.min_x_val:
             self.min_x_val = self.GW_df['Rg/Rg_mean'].min()
             print('x-axis minimum limit updated from default value')            
-        elif max(x_total)>self.max_x_val:
+        if max(x_total)>self.max_x_val:
             self.max_x_val = max(x_total)
             print('x-axis maximum limit updated from default value')            
-        elif min(x_total)<self.min_x_val:
+        if min(x_total)<self.min_x_val:
             self.min_x_val = min(x_total)
             print('x-axis minimum limit updated from default value')            
-        elif self.GW_df['ratio'].max()>self.max_y_val:
+        if self.GW_df['ratio'].max()>self.max_y_val:
             self.max_y_val = self.GW_df['ratio'].max()
             print('y-axis maximum limit updated from default value')                        
-        elif self.GW_df['ratio'].min()<self.min_y_val:   
+        if self.GW_df['ratio'].min()<self.min_y_val:   
             self.min_y_val = self.GW_df['ratio'].min()            
             print('y-axis minimum limit updated from default value')                        
-        elif max(y_total)>self.max_y_val:
+        if max(y_total)>self.max_y_val:
             self.max_y_val = max(y_total)
             print('y-axis maximum limit updated from default value')                        
-        elif min(y_total)<self.min_y_val:
+        if min(y_total)<self.min_y_val:
             self.min_y_val = min(y_total)
             print('y-axis minimum limit updated from default value')                        
+
+        xlims = [self.min_x_val,self.max_x_val]
+        ylims = [self.min_y_val,self.max_y_val]
+
             
         # Set up x and y labels
         xlabel = x_variable
