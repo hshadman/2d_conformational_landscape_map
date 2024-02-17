@@ -38,7 +38,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 **PyConforMap.`plot_protein_against_GW`** (**protein_label**, **provided_color**= 'magenta')
 
 
-This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for both a protein/polymer and GW. GW points are shown in black by default. If any data point exceeds the default axis limits, axis limits will be automatically readjusted. 
+This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for both a protein/polymer and GW. GW points are shown in black by default. If any data point exceeds a default axis limit, axis limit will be automatically readjusted. 
 
 ### Input Parameters:<br> 
 
