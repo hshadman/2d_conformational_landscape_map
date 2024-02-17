@@ -261,7 +261,7 @@ class PyConforMap():
         self.bounded_fraction = bounded_fraction
         return print(f'{format(bounded_fraction*100,"0.2f")}% of protein/polymer snapshots are close to at least 1 GW snapshot')
     
-    def change_xlim_ylim(self,min_x_val,min_y_val,,max_x_val,max_y_val):
+    def change_xlim_ylim(self,min_x_val,min_y_val,max_x_val,max_y_val):
         #the default xlim max is 3 and default xlim min is 0
         #the default ylim max is 30 and default ylim min is 0
         #this method is needed if either the reference Rg/Rg_mean or shape ratio exceeds current default axis lims on scatter plot
