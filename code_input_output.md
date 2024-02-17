@@ -94,6 +94,6 @@ Generates a plot of _f<sub>C</sub>_ against number of protein/polymer snapshots.
 **protein_lab** : **_string_**<br>
 &ensp;&ensp;A string to identify the protein  
 **no_dots** : **_int_**<br>
-&ensp;&ensp;The number of data points to show on the plot. Default 20. E.g. if simulation has 200000 snapshots, the x-axis will plot 10000, 20000 ... 200000 snapshots and compute _f<sub>C</sub>_ at those snapshot counts, if no_dots = 20.
+&ensp;&ensp;The number of data points to show on the plot. Default 20. E.g. if simulation has 200,000 snapshots, the x-axis will plot 10,000, 20,000 ... 200,000 and the y-axis will show _f<sub>C</sub>_ at each of those snapshot counts, if no_dots = 20.
 
 </details>
