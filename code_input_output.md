@@ -61,19 +61,21 @@ This method prints out what % of protein/polymer points are within the pre-provi
 
 <details>
 
-<summary>change_xlim_ylim - update max x-axis limit and max y-axis limit</summary>
+<summary>change_xlim_ylim - update x-axis and y-axis limits</summary>
 
-**PyConforMap.`change_xlim_ylim`** (**max_x_val**, **max_y_val**)
+**PyConforMap.`change_xlim_ylim`** (**min_x_val**, **min_y_val**, **max_x_val**, **max_y_val**) 
 
-A quick method if anyt
+Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
 
 ### Input Parameters:<br> 
 
-**protein_label** : **_string_**<br>
-&ensp;&ensp;A string to identify the protein points on the scatter plot.  
-**provided_color** : **_string, optional_**<br>
-&ensp;&ensp;The color of the provided protein/polymer points. Default magenta.
-
-An attribute _fC_value_, containing _f<sub>C</sub>_, is assigned once this method is run.
+**min_x_val** : **_float_**<br>
+&ensp;&ensp;Desired minimum x-axis limit.
+**min_y_val** : **_float_**<br>
+&ensp;&ensp;Desired minimum y-axis limit.
+**max_x_val** : **_float_**<br>
+&ensp;&ensp;Desired maximum x-axis limit.
+**max_y_val** : **_float_**<br>
+&ensp;&ensp;Desired maximum y-axis limit.
 
 </details>
