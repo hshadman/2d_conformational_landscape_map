@@ -31,7 +31,7 @@ Methods:
 
 <details>
 
-<summary>plot_protein_against_GW</summary>
+<summary>_plot_protein_against_GW_ - generates the scatter plot</summary>
 **PyConforMap.plot_protein_against_GW** (**protein_label**,**provided_color**= 'magenta')
 
 This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for both a protein/polymer and GW. GW points are shown in black by default.
@@ -42,5 +42,16 @@ Input Parameters:<br>
 &ensp;&ensp;A string to identify the protein points on the scatter plot.  
 **provided_color** : **_string, optional_**<br>
 &ensp;&ensp;The color of the provided protein/polymer points. Default magenta.
+
+An attribute _fC_value_, containing _f<sub>C</sub>_, is assigned once this method is run.
+
+</details>
+
+<details>
+
+<summary>_check_boundary_ - computes % of protein/polymer points within the pre-assigned radius of GW points</summary>
+**PyConforMap._check_boundary_** ()
+
+This method prints out what % of protein/polymer points are within the pre-provided radius of at least one GW points on the scatter plot. To enable this computation, the coordinates of all points on the scatter plot are temporarily transformed (occurs completely in the background), as _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ have different ranges.
 
 </details>
