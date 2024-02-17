@@ -70,12 +70,12 @@ Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
 ### Input Parameters:<br> 
 
 **min_x_val** : **_float_**<br>
-&ensp;&ensp;Desired minimum x-axis limit.
+&ensp;&ensp;Desired minimum x-axis limit.  
 **min_y_val** : **_float_**<br>
-&ensp;&ensp;Desired minimum y-axis limit.
+&ensp;&ensp;Desired minimum y-axis limit.  
 **max_x_val** : **_float_**<br>
-&ensp;&ensp;Desired maximum x-axis limit.
+&ensp;&ensp;Desired maximum x-axis limit.  
 **max_y_val** : **_float_**<br>
-&ensp;&ensp;Desired maximum y-axis limit.
+&ensp;&ensp;Desired maximum y-axis limit.  
 
 </details>
