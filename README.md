@@ -1,6 +1,6 @@
-# PLEASE READ FIRST
+# Introducing _PyConforMap_: Draw pretty maps of your polymer or disordered protein conformational ensembles!
 
-## Introducing _PyConforMap_: Draw pretty maps of your polymer or disordered protein conformational ensembles!
+## PLEASE READ FIRST
 
 ## This repository provides an easy-to-implement python module called _PyConforMap_ that generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_).
 
