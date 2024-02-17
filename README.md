@@ -1,4 +1,4 @@
-# Introducing _PyConforMap_: Draw pretty maps of your polymer or disordered protein conformational ensembles!
+# _PyConforMap_: Draw pretty maps of your polymer or disordered protein conformational ensembles!
 
 ## PLEASE READ FIRST
 
