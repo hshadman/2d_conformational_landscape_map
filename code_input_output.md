@@ -38,7 +38,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 
 This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for both a protein/polymer and GW. GW points are shown in black by default.
 
-Input Parameters:<br> 
+### Input Parameters:<br> 
 
 **protein_label** : **_string_**<br>
 &ensp;&ensp;A string to identify the protein points on the scatter plot.  
@@ -56,5 +56,24 @@ An attribute _fC_value_, containing _f<sub>C</sub>_, is assigned once this metho
 **PyConforMap.`check_boundary`** ()
 
 This method prints out what % of protein/polymer points are within the pre-provided radius of at least one GW points on the scatter plot. To enable this computation, the coordinates of all points on the scatter plot are temporarily transformed (occurs completely in the background), as _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ have different ranges.
+
+</details>
+
+<details>
+
+<summary>change_xlim_ylim - update max x-axis limit and max y-axis limit</summary>
+
+**PyConforMap.`change_xlim_ylim`** (**max_x_val**, **max_y_val**)
+
+A quick method if anyt
+
+### Input Parameters:<br> 
+
+**protein_label** : **_string_**<br>
+&ensp;&ensp;A string to identify the protein points on the scatter plot.  
+**provided_color** : **_string, optional_**<br>
+&ensp;&ensp;The color of the provided protein/polymer points. Default magenta.
+
+An attribute _fC_value_, containing _f<sub>C</sub>_, is assigned once this method is run.
 
 </details>
