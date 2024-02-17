@@ -352,7 +352,7 @@ class PyConforMap():
     def save_GW_chain_to_csv(self, direc = './'):
         #GW datafile must contain only one chain length
         #will be saved to current directory
-        self.GW_df.to_csv(f"{direc}GW_chainlen{self.GW_df.chain_length.unique()[0]}.csv",index=False)
+        self.GW_df.to_csv(f"{direc}GW_chainlen{self.GW_df.chain_length.unique()[0]}_{self.GW_df.shape[0]}_snapshots.csv",index=False)
     def retrieve_default_GW_chain(self):
         self.GW_df = pd.read_csv('GW_chainlen100.csv')
         self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
