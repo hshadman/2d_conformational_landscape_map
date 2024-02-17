@@ -139,6 +139,10 @@ Returns a pandas dataframe of shape (n,2) of chain quantities at each snapshot (
 **sigma** : **_float, optional_**<br>
 &ensp;&ensp;The standard deviation of the gaussian distribution from which to randomly select distance of one monomer to next. Default 1.  
 
+### Returns:<br> 
+
+A pandas dataframe of the new GW simulation. 
+
 </details>
 
 <details>
