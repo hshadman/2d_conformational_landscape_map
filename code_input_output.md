@@ -14,10 +14,10 @@ Parameters:<br>
 **radius_** : **_float, optional_**
 	     - The radius to use to count GW snapshots that are close to protein/polymer snapshots, or vice versa. Default 0.1. NOTE: All scatter points coordinates are transformed before any such computation is performed.  
 **max_x_val** : **_float, optional_** 
-	       - maximum x-axis limit for scatter plot. Default 3. 
+	       - maximum x-axis limit for scatter plot. Default 3.  
 **max_y_val** : **_float, optional_**
-	       - maximum y-axis limit to use for scatter plot. Default 30.
+	       - maximum y-axis limit to use for scatter plot. Default 30.  
 **min_x_val** : **_float, optional_** 
-	       - minimum x-axis limit for scatter plot. Default 0.
+	       - minimum x-axis limit for scatter plot. Default 0.  
 **min_y_val** : **_float, optional_**
-	       - minimum y-axis limit to use for scatter plot. Default 0.
+	       - minimum y-axis limit to use for scatter plot. Default 0.  
