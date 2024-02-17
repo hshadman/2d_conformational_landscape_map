@@ -15,7 +15,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 ### Input Parameters:<br> 
 
 **csv_file** : **_a csv file of shape (n,2)_**<br>
-&ensp;&ensp;A csv file containing square of the radius of gyration (_R<sub>g</sub><sup>2</sup>_) in the first column and square of the end-to-end distance (_R<sub>ee</sub><sup>2</sup>_) in the second column. Each row in the file represents a single conformation snapshot for a protein/polymer. 
+&ensp;&ensp;A csv file containing square of the radius of gyration (_R<sub>g</sub><sup>2</sup>_) in the first column and square of the end-to-end distance (_R<sub>ee</sub><sup>2</sup>_) in the second column. Each row in the file represents a single conformation snapshot for a protein/polymer.  
 **radius_** : **_float, optional_**<br> 
 &ensp;&ensp;The radius to use to count GW snapshots that are close to at least one protein/polymer snapshot, or vice versa. Default 0.1.  
 &ensp;&ensp;**NOTE**: All scatter point coordinates are transformed before any such computation is performed.  
@@ -123,7 +123,7 @@ Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.
 
 This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. 
 
-Returns a pandas dataframe of chain quantities at each snapshot (row represents snapshot), first column is _R<sub>g</sub><sup>2</sup>_ and second column is _R<sub>ee</sub><sup>2</sup>_.
+Returns a pandas dataframe of shape (n,2) of chain quantities at each snapshot (row represents snapshot), first column is _R<sub>g</sub><sup>2</sup>_ and second column is _R<sub>ee</sub><sup>2</sup>_. n is the number of snapshots. 
 
 ### Input Parameters:<br> 
 
