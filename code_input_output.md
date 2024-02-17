@@ -17,7 +17,8 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 **csv_file** : **_a csv file of shape (n,2)_**<br>
 &ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot.  
 **radius_** : **_float, optional_**<br> 
-&ensp;&ensp;The radius to use to count GW snapshots that are close to protein/polymer snapshots, or vice versa. Default 0.1. NOTE: All scatter points coordinates are transformed before any such computation is performed.  
+&ensp;&ensp;The radius to use to count GW snapshots that are close to at least one protein/polymer snapshot, or vice versa. Default 0.1.  
+**NOTE**: All scatter points coordinates are transformed before any such computation is performed.  
 **max_x_val** : **_float, optional_**<br>
 &ensp;&ensp;maximum x-axis limit for scatter plot. Default 3.  
 **max_y_val** : **_float, optional_**<br>
