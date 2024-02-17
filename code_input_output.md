@@ -151,3 +151,13 @@ Saves the current GW reference chain simulation to a csv file.
 **direc** : **_string, optional_**<br>
 &ensp;&ensp;The directory in which to save the file. Default './'.  
 </details>
+
+<details>
+
+<summary>retrieve_default_GW_chain - revert to default reference simulation</summary>
+
+**PyConforMap.`retrieve_default_GW_chain`** ()
+
+Revert to the default GW reference simulation. Re-loads the _GW_chainlen100.csv_ csv file to use as reference. 
+
+</details>
