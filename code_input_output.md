@@ -147,7 +147,7 @@ Returns a pandas dataframe of shape (n,2) of chain quantities at each snapshot (
 
 **PyConforMap.`save_GW_chain_to_csv`** (**direc** = './')
 
-Saves the current GW reference chain simulation to a csv file. The filename is _GW_chainlenZ_Y_snapshots.csv_ where _Z_ and _Y_ are the provided chain length and number of snapshots respectively. 
+Saves the current GW reference chain simulation to a csv file. The filename is _GW_chainlenZ_Y_snapshots.csv_ where _Z_ and _Y_ are the chain length and number of snapshots respectively. 
 
 **direc** : **_string, optional_**<br>
 &ensp;&ensp;The directory in which to save the file. Default './'.  
