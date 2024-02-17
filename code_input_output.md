@@ -15,7 +15,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 ### Input Parameters:<br> 
 
 **csv_file** : **_a csv file of shape (n,2)_**<br>
-&ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot for a protein/polymer. 
+&ensp;&ensp;A csv file containing square of the radius of gyration (_R<sub>g</sub><sup>2</sup>_) in the first column and square of the end-to-end distance (_R<sub>ee</sub><sup>2</sup>_) in the second column. Each row in the file represents a single conformation snapshot for a protein/polymer. 
 **radius_** : **_float, optional_**<br> 
 &ensp;&ensp;The radius to use to count GW snapshots that are close to at least one protein/polymer snapshot, or vice versa. Default 0.1.  
 &ensp;&ensp;**NOTE**: All scatter point coordinates are transformed before any such computation is performed.  
@@ -32,7 +32,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 
 <details>
 
-<summary>plot_protein_against_GW - generates the scatter plot</summary>
+<summary>plot_protein_against_GW - generates the 2D scatter plot</summary>
 
 **PyConforMap.`plot_protein_against_GW`** (**protein_label**, **provided_color**= 'magenta')
 
@@ -112,5 +112,30 @@ Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.
 &ensp;&ensp;A string to identify the protein  
 **no_dots** : **_int_**<br>
 &ensp;&ensp;The number of data points to show on the plot. Default 40. E.g. if simulation has 720,000 snapshots, the x-axis will plot 18,000, 36,000 ... 720,000 and the y-axis will show _f<sub>C</sub>_ at each of those GW snapshot counts, if no_dots = 40.
+
+</details>
+
+<details>
+
+<summary>regenerate_GW_chain - simulates new GW reference chain</summary>
+
+**PyConforMap.`regenerate_GW_chain`** (**chain_length**, **nosnaps**, **interval**= 1, **mu**= 0, **sigma**= 1)
+
+This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. 
+
+Returns a pandas dataframe of chain quantities at each snapshot (row represents snapshot), first column is _R<sub>g</sub><sup>2</sup>_ and second column is _R<sub>ee</sub><sup>2</sup>_.
+
+### Input Parameters:<br> 
+
+**chain_length** : **_int_**<br>
+&ensp;&ensp;The desired number of monomers of the chain.  
+**nosnaps** : **_int_**<br>
+&ensp;&ensp;The desired number of snapshots in the simulation. Each snapshot is a new randomly generated chain conformation.  
+**interval** : **_int, optional_**<br>
+&ensp;&ensp;The number of simulation steps to go through in-between snapshots. Default 1.  
+**mu** : **_float, optional_**<br>
+&ensp;&ensp;The mean of the gaussian distribution from which to randomly select distance of one monomer to next. Default 0.  
+**sigma** : **_float, optional_**<br>
+&ensp;&ensp;The standard deviation of the gaussian distribution from which to randomly select distance of one monomer to next. Default 1.  
 
 </details>
