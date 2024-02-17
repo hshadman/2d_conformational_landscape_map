@@ -121,7 +121,7 @@ Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.
 
 **PyConforMap.`regenerate_GW_chain`** (**chain_length**, **nosnaps**, **interval**= 1, **mu**= 0, **sigma**= 1)
 
-This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. 
+This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. Also saves this simulation as the current reference GW simulation, replacing the default. 
 
 Returns a pandas dataframe of shape (n,2) of chain quantities at each snapshot (row represents snapshot), first column is _R<sub>g</sub><sup>2</sup>_ and second column is _R<sub>ee</sub><sup>2</sup>_. n is the number of snapshots. 
 
@@ -138,4 +138,16 @@ Returns a pandas dataframe of shape (n,2) of chain quantities at each snapshot (
 **sigma** : **_float, optional_**<br>
 &ensp;&ensp;The standard deviation of the gaussian distribution from which to randomly select distance of one monomer to next. Default 1.  
 
+</details>
+
+<details>
+
+<summary>save_GW_chain_to_csv - save current GW chain data to a csv file</summary>
+
+**PyConforMap.`save_GW_chain_to_csv`** (**direc** = './')
+
+Saves the current GW reference chain simulation to a csv file. 
+
+**direc** : **_string, optional_**<br>
+&ensp;&ensp;The directory in which to save the file. Default './'.  
 </details>
