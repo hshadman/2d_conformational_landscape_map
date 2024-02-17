@@ -30,7 +30,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 
 ## Methods:
 
-### Click to Expand:
+### Click to Expand
 <details>
 
 <summary>plot_protein_against_GW - generates the 2D scatter plot</summary>
