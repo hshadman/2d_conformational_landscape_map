@@ -15,7 +15,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 ### Input Parameters:<br> 
 
 **csv_file** : **_a csv file of shape (n,2)_**<br>
-&ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot.  
+&ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot for a protein/polymer. 
 **radius_** : **_float, optional_**<br> 
 &ensp;&ensp;The radius to use to count GW snapshots that are close to at least one protein/polymer snapshot, or vice versa. Default 0.1.  
 &ensp;&ensp;**NOTE**: All scatter point coordinates are transformed before any such computation is performed.  
@@ -83,21 +83,17 @@ Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
 
 <details>
 
-<summary>vary_protein - plot _f<sub>C</sub>_ against protein/polymer snapshots</summary>
+<summary>vary_protein - plot f<sub>C</sub> against protein/polymer snapshots</summary>
 
-**PyConforMap.`change_xlim_ylim`** (**min_x_val**, **min_y_val**, **max_x_val**, **max_y_val**) 
+**PyConforMap.`vary_protein`** (**protein_lab**, **no_dots** = 20) 
 
-Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
+Generates a plot of _f<sub>C</sub>_ against number of protein/polymer snapshots.
 
 ### Input Parameters:<br> 
 
-**min_x_val** : **_float_**<br>
-&ensp;&ensp;Desired minimum x-axis limit.  
-**min_y_val** : **_float_**<br>
-&ensp;&ensp;Desired minimum y-axis limit.  
-**max_x_val** : **_float_**<br>
-&ensp;&ensp;Desired maximum x-axis limit.  
-**max_y_val** : **_float_**<br>
-&ensp;&ensp;Desired maximum y-axis limit.  
+**protein_lab** : **_string_**<br>
+&ensp;&ensp;A string to identify the protein
+**no_dots** : **_int_**<br>
+&ensp;&ensp;The number of data points to show on the plot. Default 20. E.g. if simulation has 200000 snapshots, the x-axis will plot 10000, 20000 ... 200000 snapshots and compute _f<sub>C</sub>_ at those snapshot counts, if no_dots = 20.
 
 </details>
