@@ -12,7 +12,7 @@ Once the dataset is loaded, it prints the % of protein/polymer points that are c
 
 By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory.
 
-Input Parameters:<br> 
+### Input Parameters:<br> 
 
 **csv_file** : **_a csv file of shape (n,2)_**<br>
 &ensp;&ensp;A csv file containing _R<sub>g</sub><sup>2</sup>_ in the first column and _R<sub>ee</sub><sup>2</sup>_ in the second column. Each row in the file represents a single conformation snapshot.  
@@ -27,16 +27,13 @@ Input Parameters:<br>
 **min_y_val** : **_float, optional_**<br>
 &ensp;&ensp;minimum y-axis limit to use for scatter plot. Default 0.  
 
-Methods:
+## Methods:
 
 <details>
 
-<summary>
-_plot_protein_against_GW_ - generates the scatter plot
+<summary>plot_protein_against_GW - generates the scatter plot</summary>
 
-</summary>
-
-#### **PyConforMap.plot_protein_against_GW** (**protein_label**,**provided_color**= 'magenta')
+**PyConforMap.plot_protein_against_GW** (**protein_label**,**provided_color**= 'magenta')
 
 This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) for both a protein/polymer and GW. GW points are shown in black by default.
 
