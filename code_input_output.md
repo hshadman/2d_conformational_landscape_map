@@ -66,7 +66,7 @@ This method prints out what % of protein/polymer points are within the pre-provi
 
 **PyConforMap.`change_xlim_ylim`** (**min_x_val**, **min_y_val**, **max_x_val**, **max_y_val**) 
 
-Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
+Updates x-axis and y-axis limits of scatter plot. 
 
 ### Input Parameters:<br> 
 
