@@ -80,3 +80,24 @@ Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
 &ensp;&ensp;Desired maximum y-axis limit.  
 
 </details>
+
+<details>
+
+<summary>vary_protein - plot _f<sub>C</sub>_ against protein/polymer snapshots</summary>
+
+**PyConforMap.`change_xlim_ylim`** (**min_x_val**, **min_y_val**, **max_x_val**, **max_y_val**) 
+
+Updates x-axis and y-axis limits of scatter plot. Re-plot after updating.
+
+### Input Parameters:<br> 
+
+**min_x_val** : **_float_**<br>
+&ensp;&ensp;Desired minimum x-axis limit.  
+**min_y_val** : **_float_**<br>
+&ensp;&ensp;Desired minimum y-axis limit.  
+**max_x_val** : **_float_**<br>
+&ensp;&ensp;Desired maximum x-axis limit.  
+**max_y_val** : **_float_**<br>
+&ensp;&ensp;Desired maximum y-axis limit.  
+
+</details>
