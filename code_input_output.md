@@ -10,7 +10,7 @@ The class requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _m
   
 **THE CLASS CODE REQUIRES ONE INPUT FILE:** It is a csv file (for a given protein/polymer simulation) with 2 columns. The first column contains _R<sub>g</sub><sup>2</sup>_ values and the second column contains _R<sub>ee</sub><sup>2</sup>_ values. In this (user provided) file, each row represents a protein/polymer conformation snapshot from the simulation. An example input is the 'example_protein.csv' csv file (included with repository). A second csv file, for the reference (GW) simulation, is already included with this repository.  
 
-Once the dataset is loaded, it prints the % of protein/polymer points that are close to reference (GW) points.
+Once the dataset is loaded, it prints the % of protein/polymer points that are close to at least one GW point.
 
 By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory. This file contains a pandas dataframe of shape (n,4) of the simulation (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), and fourth column is relative radius of gyration. n is the number of snapshots. 
 
