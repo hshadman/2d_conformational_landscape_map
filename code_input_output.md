@@ -12,7 +12,7 @@ The class requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _m
 
 Once the dataset is loaded, it prints the % of protein/polymer points that are close to reference (GW) points.
 
-By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory.
+By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory. This file contains a pandas dataframe of shape (n,5) of the simulation (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), fourth column is relative radius of gyration, and fifth column is instantaneous shape ratio. n is the number of snapshots. 
 
 ### Input Parameters:<br> 
 
@@ -126,7 +126,7 @@ Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.
 
 This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. Also saves this new simulation as the 'current' reference GW simulation (updates the _GW_df_ attribute with new simulation). 
 
-Returns a pandas dataframe of shape (n,5) of chain's conformation quantities at each snapshot (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), fourth column is relative radius of gyration, and fifth column is instantaneous shape ratio. n is the number of snapshots. 
+Returns a pandas dataframe of shape (n,5) of the simulation (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), fourth column is relative radius of gyration, and fifth column is instantaneous shape ratio. n is the number of snapshots. 
 
 ### Input Parameters:<br> 
 
