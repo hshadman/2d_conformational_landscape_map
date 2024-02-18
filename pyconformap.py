@@ -25,15 +25,23 @@ class PyConforMap():
     ----------
     protein_rg2 : array
         the square of the radius of gyration values of protein/polymer
+        
     protein_ree2 : array
         the square of the end-to-end distance values of protein/polymer
+        
     protein_rg_mean : float
         The mean of the protein/polymer radius of gyration, computed from all data combined.
+        
     GW_df : pandas dataframe
         A dataframe of the GW reference simulation, which by default is the provided GW_chainlen100.csv file. 
         The columns, in order, are GW chain length, square of radius of gyration, square of end-to-end distance,
         relative radius of gyration, and instantaneous shape ratio. 
         Each row represents a conformation snapshot from the GW simulation.
+        
+    poly_var : pandas dataframe of shape (n,2)
+        A dataframe of the protein/polymer simulation. 
+        The first column is Rg/Rg_mean and the second column is instantaneous shape ratio. 
+        Each row represents a conformation snapshot from the protein/polymer simulation.        
         
     Methods
     -------
