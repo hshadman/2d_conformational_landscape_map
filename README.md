@@ -6,7 +6,7 @@
 
 ### If you have comments/suggestions, please feel free to email me at hs4md@virginia.edu.
 
-### HOW TO CITE: If you use this module, please cite us using the provided doi. 
+### HOW TO CITE: If you use this module, please cite us using the provided DOI. 
 
 The _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ is a measure of (relative) size for a protein or polymer chain, and _R<sub>s</sub>_ is a measure of its shape. _R<sub>s</sub>_ is expected to be low (~2 or lower) for compact structures and high for highly extended structures (~12 or higher). A single _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ value and corresponding _R<sub>s</sub>_ value for a polymer together constitute its instantaneous conformation. When all the _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and  _R<sub>s</sub>_ values of a polymer are plotted together, they constitute what we call a 2D map of the conformational landscape of that polymer.
 
