@@ -37,7 +37,7 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 
 ### Output after initialization:<br> 
 
-Returns the percentage of protein/polymer points that are close to at least one GW point. 
+Returns the percentage of protein/polymer points that are close to at least one GW point on the scatter plot.
 
 ## Methods:
 
