@@ -12,7 +12,7 @@ The class requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _m
 
 Once the dataset is loaded, it prints the % of protein/polymer points that are close to reference (GW) points.
 
-By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory. This file contains a pandas dataframe of shape (n,5) of the simulation (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), fourth column is relative radius of gyration, and fifth column is instantaneous shape ratio. n is the number of snapshots. 
+By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and must be available in the default directory. This file contains a pandas dataframe of shape (n,4) of the simulation (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), and fourth column is relative radius of gyration. n is the number of snapshots. 
 
 ### Input Parameters:<br> 
 
@@ -189,5 +189,5 @@ Revert to the default GW reference simulation. Re-loads the _GW_chainlen100.csv_
 **protein_rg_mean** : **_float_**<br>
 &ensp;&ensp;The mean of the protein/polymer radius of gyration, computed from all data combined.
 
-**GW_df** : **_pandas dataframe_**<br>
+**GW_df** : **_pandas dataframe of shape (n,5)_**<br>
 &ensp;&ensp;A dataframe of the GW reference simulation, which by default is the provided _GW_chainlen100.csv_ file. The columns, in order, are GW chain length, square of radius of gyration, square of end-to-end distance, relative radius of gyration, and instantaneous shape ratio. Each row represents a conformation snapshot from the GW simulation.  
