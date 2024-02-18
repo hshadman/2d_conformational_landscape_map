@@ -124,9 +124,9 @@ Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.
 
 **PyConforMap.`regenerate_GW_chain`** (**chain_length**, **nosnaps**, **interval**= 1, **mu**= 0, **sigma**= 1)
 
-This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. Also saves this simulation as the current reference GW simulation, replacing the default. 
+This method simulates an entirely new GW chain to be used as a reference. The simulation is such that each snapshot consists of a polymer chain conformation where the distance of one monomer to the next was randomly selected from a gaussian distribution with mean 0 and standard deviation 1. Also saves this new simulation as the 'current' reference GW simulation (updates the _GW_df_ attribute with new simulation). 
 
-Returns a pandas dataframe of shape (n,2) of chain quantities at each snapshot (row represents snapshot), first column is _R<sub>g</sub><sup>2</sup>_ and second column is _R<sub>ee</sub><sup>2</sup>_. n is the number of snapshots. 
+Returns a pandas dataframe of shape (n,5) of chain's conformation quantities at each snapshot (row represents snapshot), first column is chain length, second column is square of radius of gyration (_R<sub>g</sub><sup>2</sup>_), third column is square of end-to-end distance (_R<sub>ee</sub><sup>2</sup>_), fourth column is relative radius of gyration, and fifth column is instantaneous shape ratio. n is the number of snapshots. 
 
 ### Input Parameters:<br> 
 
