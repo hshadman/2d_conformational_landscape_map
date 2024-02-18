@@ -14,7 +14,7 @@ This module generates 2D scatter plots of _R<sub>s</sub>_ against _R<sub>g</sub>
 
 **THE MODULE CODE REQUIRES ONE INPUT FILE:** It is a csv file (for a given protein/polymer simulation) with 2 columns. The first column contains _R<sub>g</sub><sup>2</sup>_ values and the second column contains _R<sub>ee</sub><sup>2</sup>_ values. In this (user provided) file, each row (effectively) represents a protein/polymer conformation snapshot from the simulation. An example input is the 'example_protein.csv' csv file (included with repository). A second csv file, for the reference (GW) simulation, is already included with this repository.  
 
-The model requires the _pandas_, _ numpy_, _matplotlib_, _scipy_, _itertools_, _more_itertools_ and _random_ python packages.  
+The model requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _more_itertools_ and _random_ python packages.  
 
 The 'code_input_output.md' file provides technical details (input arguments, expected outputs) of the module. The 'pyconformap.py' file contains the source code for the module.  The 'illustrated_example.ipynb' jupyter notebook file shows examples to illustrate implementation of the code. 
 
