@@ -54,7 +54,7 @@ This method generates a scatter plot of instantaneous shape ratio (_R<sub>s</sub
 ### Input Parameters:<br> 
 
 **protein_label** : **_string_**<br>
-&ensp;&ensp;A string to identify the protein points on the scatter plot.  
+&ensp;&ensp;A string to label the protein points on the scatter plot.  
 **provided_color** : **_string, optional_**<br>
 &ensp;&ensp;The color of the provided protein/polymer points. Default magenta.
 
@@ -104,7 +104,7 @@ Generates a plot of _f<sub>C</sub>_ against number of protein/polymer snapshots.
 ### Input Parameters:<br> 
 
 **protein_lab** : **_string_**<br>
-&ensp;&ensp;A string to identify the protein  
+&ensp;&ensp;A string to label the protein  
 **no_dots** : **_int_**<br>
 &ensp;&ensp;The number of data points to show on the plot. Default 20. E.g. if simulation has 200,000 snapshots, the x-axis will plot 10,000, 20,000 ... 200,000 and the y-axis will show _f<sub>C</sub>_ at each of those snapshot counts, if no_dots = 20.
 
@@ -121,7 +121,7 @@ Generates a plot of _f<sub>C</sub>_ against number of GW snapshots.
 ### Input Parameters:<br> 
 
 **protein_lab** : **_string_**<br>
-&ensp;&ensp;A string to identify the protein  
+&ensp;&ensp;A string to label the protein  
 **no_dots** : **_int_**<br>
 &ensp;&ensp;The number of data points to show on the plot. Default 40. E.g. if simulation has 720,000 snapshots, the x-axis will plot 18,000, 36,000 ... 720,000 and the y-axis will show _f<sub>C</sub>_ at each of those GW snapshot counts, if no_dots = 40.
 
