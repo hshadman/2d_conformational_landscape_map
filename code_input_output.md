@@ -4,9 +4,7 @@
 
 PyConforMap is a python class. 
 
-This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_), for a given protein/polymer simulation on top of those of a Gaussian Walk (GW) simulation. _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
-
-It can be used to examine the scatter plot and analyze metrics. 
+This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_), for a given protein/polymer simulation on top of those of a Gaussian Walk (GW) simulation. The class can be used to analyze metrics of the scatter plot. _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
 
 The class requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _more_itertools_ and _random_ python packages.  They are loaded automatically.  
 
