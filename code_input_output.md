@@ -6,7 +6,7 @@ PyConforMap is a python class.
 
 This class generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_), for a given protein/polymer simulation on top of those of a Gaussian Walk (GW) simulation. The class can be used to analyze metrics of the scatter plot. _R<sub>g</sub><sup>mean</sup>_ is a constant, computed using the entire dataset supplied. 
 
-The module requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _more_itertools_ and _random_ python packages. They are automatically loaded when the 'pyconformap.py' file is executed, as shown in the 'illustrated_example.ipynb' jupyter notebook.
+The class requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _more_itertools_ and _random_ python packages. They are automatically loaded when the 'pyconformap.py' file is executed, as shown in the 'illustrated_example.ipynb' jupyter notebook.
   
 **THE CLASS CODE REQUIRES ONE INPUT FILE:** It is a csv file (for a given protein/polymer simulation) with 2 columns. The first column contains _R<sub>g</sub><sup>2</sup>_ values and the second column contains _R<sub>ee</sub><sup>2</sup>_ values. In this (user provided) file, each row (effectively) represents a protein/polymer conformation snapshot from the simulation. An example input is the 'example_protein.csv' csv file (included with repository). A second csv file, for the reference (GW) simulation, is already included with this repository.  
 
