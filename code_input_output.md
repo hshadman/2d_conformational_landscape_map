@@ -193,4 +193,4 @@ Revert to the default GW reference simulation. Re-loads the _GW_chainlen100.csv_
 &ensp;&ensp;A dataframe of the GW reference simulation, which by default is the provided _GW_chainlen100.csv_ file. The columns, in order, are GW chain length, square of radius of gyration, square of end-to-end distance, relative radius of gyration, and instantaneous shape ratio. Each row represents a conformation snapshot from the GW simulation.  
 
 **poly_var** : **_pandas dataframe of shape (n,2)_**<br>
-&ensp;&ensp;A dataframe of the protein/polymer simulation. The first column is _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and the second column is instantaneous shape ratio. Each row represents a conformation snapshot from the protein/polymer simulation. 
+&ensp;&ensp;A dataframe of the protein/polymer simulation. The first column is relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) and the second column is instantaneous shape ratio. Each row represents a conformation snapshot from the protein/polymer simulation. 
