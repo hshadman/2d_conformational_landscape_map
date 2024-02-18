@@ -1,7 +1,23 @@
+#these packages are needed to run the code 
+
+import pandas as pd
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from scipy import spatial
+from itertools import chain
+from more_itertools import sliced
+from matplotlib.ticker import MaxNLocator
+import random as rd
+
 class PyConforMap():
     
     """
-     A class used to represent a 2D map of the conformational landscape of a protein or polymer chain
+     A class used to represent a 2D map of the conformational landscape of a protein or polymer chain. The 2D map
+     is in the form of a scatter plot of relative radius of gyration and instantaneous shape ratio. These quantities
+     are plotted for a given protein/polymer and for a reference GW polymer chain model. Different metrics 
+     of the scatter can be studied using this class. An example is the fC score, ranging from 0 to 1, that 
+     quantifies conformational diversity of the provided protein or polymer chain. 
 
     ...
 
@@ -11,34 +27,44 @@ class PyConforMap():
         the square of the radius of gyration values of protein/polymer
     protein_ree2 : array
         the square of the end-to-end distance values of protein/polymer
-    protein_rg : array
-        the radius of gyration values (square root of the protein_rg2 attribute) 
     protein_rg_mean : float
-        The mean value of radius of gyration data, inteded to be used wherever in the class this mean is needed.
+        The mean of the protein/polymer radius of gyration, computed from all data combined.
     GW_df : pandas dataframe
-        A pandas dataframe containing the GW data. By default, it loads the provided csv file GW_chainlen100.csv
-    radius_ : float
-        The radius value (default 0.1) of the protein/polymer dots in the transformed 2D space, for fC calculation
+        A dataframe of the GW reference simulation, which by default is the provided GW_chainlen100.csv file. 
+        The columns, in order, are GW chain length, square of radius of gyration, square of end-to-end distance,
+        relative radius of gyration, and instantaneous shape ratio. 
+        Each row represents a conformation snapshot from the GW simulation.
         
     Methods
     -------
-    says(sound=None)
-        Prints the animals name and what sound it makes
-    """
-    #these packages are needed to run the code 
+    plot_protein_against_GW 
+        - generates the 2D scatter plot
+        
+    check_boundary
+        - computes % of protein/polymer points within the pre-assigned radius of GW points
+        
+    change_xlim_ylim
+        - update x-axis and y-axis limits of 2D scatter plot
+        
+    vary_protein
+        - plot fC against protein/polymer snapshots
+        
+    vary_GW_ref
+        - plot fC against GW snapshots        
+        
+    regenerate_GW_chain
+        - simulates new GW reference chain        
 
-    import pandas as pd
-    import numpy as np
-    import matplotlib
-    import matplotlib.pyplot as plt
-    from scipy import spatial
-    from itertools import chain
-    from more_itertools import sliced
-    from matplotlib.ticker import MaxNLocator
-    import random as rd
+    save_GW_chain_to_csv
+        - save current GW chain data to a csv file
+        
+    retrieve_default_GW_chain
+        - revert to default reference simulation        
+        
+    """
 
     def __init__(self, csv_file,radius_= 0.1,max_x_val=3,max_y_val=30,min_x_val=0,min_y_val=0):
-            
+        
         #load csv file, where first column is supposed to be Rg2 values and second column is Ree2 values
         #initialize the rg2 and ree2 variables
         df_conf = pd.read_csv(csv_file)
@@ -50,11 +76,11 @@ class PyConforMap():
         self.protein_rg_mean = np.mean(self.protein_rg)
         
         #initialize the reference GW chain data (by default a GW chain with 100 monomers is used)
-        #any file containing GW reference chain data must be a pandas df containing 'Rg2' and 'Rend2' columns
+        #any file containing GW reference chain data must be a pandas df containing atleast 'Rg2' and 'Rend2' columns
         #the 'Rg2' is radius-of-gyration^2 and 'Rend2' is end-to-end-distance^2
         #the instantaneous shape ratio is calculated here
         #the file containing GW reference chain data should also have Rg/Rg_mean data
-        #the self.GW_df MUST be single chain length data
+        #the self.GW_df MUST be single chain length
         self.GW_df = pd.read_csv('GW_chainlen100.csv')
         self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
         
@@ -107,7 +133,7 @@ class PyConforMap():
 
         #Earlier in the class the default max_x_val and max_y_val were initialized (these are axis limits)
         #There is a separate method in the class if these default xlim and ylim values need to be changed
-        #below it checks whether datapoints exceed the axis limits, provides an error if any limit is exceeded
+        #below it checks whether datapoints exceed the axis limits, and resets limits if they do
         #the default minimum axis limits for both x- and y-axis are 0
         if self.GW_df['Rg/Rg_mean'].max()>self.max_x_val:
             self.max_x_val = self.GW_df['Rg/Rg_mean'].max()
@@ -262,7 +288,6 @@ class PyConforMap():
         return fC_by_distance    
 
     def check_boundary(self,protein_name = 'protein'):
-        #the code in this method is very similar to the fC_using_cdist method
         
         protein_not_in_range=[]
         j=0
@@ -278,8 +303,6 @@ class PyConforMap():
     def change_xlim_ylim(self,min_x_val,min_y_val,max_x_val,max_y_val):
         #the default xlim max is 3 and default xlim min is 0
         #the default ylim max is 30 and default ylim min is 0
-        #this method is needed if either the reference Rg/Rg_mean or shape ratio exceeds current default axis lims on scatter plot
-        
         self.min_x_val = min_x_val
         self.min_y_val = min_y_val
         self.max_x_val = max_x_val
@@ -289,8 +312,7 @@ class PyConforMap():
     def vary_GW_ref(self, protein_lab, no_dots = 40):
         print('this might take a couple of minutes')        
         print('if it takes too long to run, please consider a smaller no_dots value (default set at 40)')
-        #every_yth_snap can be modified based on number of GW snapshots available
-        #as of now it is set so that the number of data points on the plot is 40
+        #as of now the interval of snapshots (stride) is set so that the number of data points on the plot is 40
         #too many snapshots take longer to process
         fig,ax = plt.subplots(figsize=(10,8))
 
@@ -349,7 +371,7 @@ class PyConforMap():
         self.GW_df = master_out.copy()
         self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
         print(f'New GW reference chain of length {chain_length} has been initialized for this instance')
-        return master_out
+        return self.GW_df
     def Ree2(self,x,y,z):
         return ((x[0]-x[len(x)-1])**2+(y[0]-y[len(y)-1])**2+(z[0]-z[len(z)-1])**2)
     def Rgx2(self,x,chain_length): 
