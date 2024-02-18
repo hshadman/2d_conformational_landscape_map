@@ -18,15 +18,20 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 
 **csv_file** : **_a csv file of shape (n,2)_**<br>
 &ensp;&ensp;A csv file containing square of the radius of gyration (_R<sub>g</sub><sup>2</sup>_) in the first column and square of the end-to-end distance (_R<sub>ee</sub><sup>2</sup>_) in the second column. Each row in the file represents a single conformation snapshot for a protein/polymer.  
+
 **radius_** : **_float, optional_**<br> 
 &ensp;&ensp;The radius to use to count GW snapshots that are close to at least one protein/polymer snapshot, or vice versa. Default 0.1.  
 &ensp;&ensp;**NOTE**: All scatter point coordinates are transformed before any such counting is performed.  
+
 **max_x_val** : **_float, optional_**<br>
 &ensp;&ensp;maximum x-axis limit for scatter plot. Default 3.  
+
 **max_y_val** : **_float, optional_**<br>
 &ensp;&ensp;maximum y-axis limit to use for scatter plot. Default 30.  
+
 **min_x_val** : **_float, optional_**<br>
 &ensp;&ensp;minimum x-axis limit for scatter plot. Default 0.  
+
 **min_y_val** : **_float, optional_**<br>
 &ensp;&ensp;minimum y-axis limit to use for scatter plot. Default 0.  
 
