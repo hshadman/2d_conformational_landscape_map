@@ -1,4 +1,5 @@
 class PyConforMap():
+    
     """
      A class used to represent a 2D map of the conformational landscape of a protein or polymer chain
 
@@ -24,9 +25,20 @@ class PyConforMap():
     says(sound=None)
         Prints the animals name and what sound it makes
     """
-    
-    def __init__(self, csv_file,radius_= 0.1,max_x_val=3,max_y_val=30,min_x_val=0,min_y_val=0):
+    #these packages are needed to run the code 
 
+    import pandas as pd
+    import numpy as np
+    import matplotlib
+    import matplotlib.pyplot as plt
+    from scipy import spatial
+    from itertools import chain
+    from more_itertools import sliced
+    from matplotlib.ticker import MaxNLocator
+    import random as rd
+
+    def __init__(self, csv_file,radius_= 0.1,max_x_val=3,max_y_val=30,min_x_val=0,min_y_val=0):
+            
         #load csv file, where first column is supposed to be Rg2 values and second column is Ree2 values
         #initialize the rg2 and ree2 variables
         df_conf = pd.read_csv(csv_file)
@@ -349,10 +361,11 @@ class PyConforMap():
     def Rgz2(self,z,chain_length): 
         Rgz = np.sum((z - np.mean(z))**2)/chain_length
         return Rgz
-    def save_GW_chain_to_csv(self, direc = './'):
+    def save_GW_chain_to_csv(self, direc_and_filename = './GW_chain_simulation.csv'):
         #GW datafile must contain only one chain length
-        #will be saved to current directory
-        self.GW_df.to_csv(f"{direc}GW_chainlen{self.GW_df.chain_length.unique()[0]}_{self.GW_df.shape[0]}_snapshots.csv",index=False)
+        #will be saved to current directory by default
+        self.GW_df.to_csv(direc_and_filename,
+                          index=False)
     def retrieve_default_GW_chain(self):
         self.GW_df = pd.read_csv('GW_chainlen100.csv')
         self.GW_df['ratio'] = self.GW_df['Rend2'].values/self.GW_df['Rg2'].values
