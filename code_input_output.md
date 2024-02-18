@@ -30,6 +30,10 @@ By default, the _GW_chainlen100.csv_ csv file is loaded for use as reference and
 **min_y_val** : **_float, optional_**<br>
 &ensp;&ensp;minimum y-axis limit to use for scatter plot. Default 0.  
 
+### Output after initialization:<br> 
+
+Returns the percentage of protein/polymer points that are close to at least one GW point. 
+
 ## Methods:
 
 ### Click to Expand
