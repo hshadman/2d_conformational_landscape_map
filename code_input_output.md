@@ -151,12 +151,12 @@ A pandas dataframe of the new GW simulation.
 
 <summary>save_GW_chain_to_csv - save current GW chain data to a csv file</summary>
 
-**PyConforMap.`save_GW_chain_to_csv`** (**direc** = './')
+**PyConforMap.`save_GW_chain_to_csv`** (**direc_and_filename** = './GW_chain_simulation.csv')
 
-Saves the current GW reference chain simulation to a csv file. The filename is _GW_chainlenZ_Y_snapshots.csv_ where _Z_ and _Y_ are the chain length and number of snapshots respectively. 
+Saves the current GW reference chain simulation to a csv file. 
 
-**direc** : **_string, optional_**<br>
-&ensp;&ensp;The directory in which to save the file. Default './'.  
+**direc_and_filename** : **_string, optional_**<br>
+&ensp;&ensp;The directory and filename in which to save the file. Default './GW_chain_simulation.csv'.  
 </details>
 
 <details>
