@@ -68,7 +68,7 @@ An attribute _fC_value_, containing _f<sub>C</sub>_, is assigned once this metho
 
 **PyConforMap.`check_boundary`** ()
 
-This method prints out what % of protein/polymer points are within the pre-provided radius of at least one GW points on the scatter plot. To enable this computation, the coordinates of all points on the scatter plot are temporarily transformed (occurs completely in the background), as _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ have different ranges.
+This method prints out what % of protein/polymer points are within the pre-provided radius of at least one GW point on the scatter plot. To enable this computation, the coordinates of all points on the scatter plot are temporarily transformed (occurs completely in the background), as _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and _R<sub>s</sub>_ have different ranges.
 
 </details>
 
