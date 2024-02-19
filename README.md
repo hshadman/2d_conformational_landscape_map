@@ -4,7 +4,7 @@
 
 ## This repository provides an easy-to-implement python module called _PyConforMap_ that generates scatter plots of instantaneous shape ratio (_R<sub>s</sub>_) against relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_).
 
-There are two main main metrics: the relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) and the instantaneous shape ratio (_R<sub>s</sub>_). _R<sub>s</sub>_ is computed as _R<sub>s</sub>_ = _R<sub>ee</sub><sup>2</sup>/R<sub>g</sub><sup>2</sup>_ where _R<sub>ee</sub>_ and _R<sub>g</sub>_ are end-to-end distance and radius of gyration respectively.
+There are two main main metrics: the relative radius of gyration (_R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_) and the instantaneous shape ratio (_R<sub>s</sub>_). _R<sub>s</sub>_ is computed as _R<sub>s</sub>_ = _R<sub>ee</sub><sup>2</sup>/R<sub>g</sub><sup>2</sup>_ where _R<sub>ee</sub>_ and _R<sub>g</sub>_ are (instantaneous) end-to-end distance and (instantaneous) radius of gyration respectively.
 
 The _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ is a measure of (relative) size for a protein or polymer chain, and _R<sub>s</sub>_ is a measure of its shape. _R<sub>s</sub>_ is expected to be low (~2 or lower) for compact structures and high for highly extended structures (~12 or higher). A single _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ value and corresponding _R<sub>s</sub>_ value for a polymer together is how we define its instantaneous conformation. When all the _R<sub>g</sub>/R<sub>g</sub><sup>mean</sup>_ and  _R<sub>s</sub>_ values of a polymer are plotted together, they constitute what we call a 2D map of the conformational landscape of that polymer.
 
