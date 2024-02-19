@@ -24,5 +24,5 @@ _PyConforMap_ is a companion to a paper that is under review for publication, as
 
 If you have comments/suggestions, please feel free to email me at hs4md@virginia.edu.
 
-## HOW TO CITE
+## How to Cite
 If you use this module, please cite us using the provided DOI. 
