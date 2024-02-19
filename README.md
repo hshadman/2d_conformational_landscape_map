@@ -27,4 +27,4 @@ _PyConforMap_ is a companion to a paper that is under review for publication, as
 If you use this module, please cite us using the provided DOI. 
 
 ## Contact Information
-If you have comments/suggestions or a bug report, please feel free to email me at hs4md@virginia.edu, or contact me through my social media links provided in the home page. 
+If you have comments/suggestions or a bug report, please feel free to email me at hossain.shadman17@gmail.com, or contact me through my social media links provided in the home page. 
