@@ -22,6 +22,7 @@ The module requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _
 
 _PyConforMap_ is a companion to a paper that is under review for publication, as of 15 Feb, 2024. 
 
-### If you have comments/suggestions, please feel free to email me at hs4md@virginia.edu.
+If you have comments/suggestions, please feel free to email me at hs4md@virginia.edu.
 
-### HOW TO CITE: If you use this module, please cite us using the provided DOI. 
+## HOW TO CITE
+If you use this module, please cite us using the provided DOI. 
