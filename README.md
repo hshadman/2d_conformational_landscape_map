@@ -23,7 +23,7 @@ The 'code_input_output.md' file provides technical details (input arguments, exp
 The module requires the _pandas_, _numpy_, _matplotlib_, _scipy_, _itertools_, _more_itertools_ and _random_ python packages. They are automatically loaded when the 'pyconformap.py' file is executed, as shown in the illustrated examples.
 
 ## Publication
-_PyConforMap_ is a companion to a paper that is under review for publication, as of 15 Feb, 2024. 
+_PyConforMap_ is companion to this [publication](https://www.cell.com/biophysj/abstract/S0006-3495(24)00272-8).
 
 ## How to Cite
 If you use this module, please cite us using the provided DOI. 
