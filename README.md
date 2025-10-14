@@ -29,4 +29,4 @@ _PyConforMap_ is companion to this [publication](https://www.cell.com/biophysj/a
 If you use this module, please cite us using the provided DOI. 
 
 ## Contact Information
-If you have comments/suggestions or a bug report, please feel free to email me at hossain.shadman17@gmail.com, or contact me through my social media links provided in the home page. 
+Please feel free to email me at hossain.shadman17@gmail.com.
